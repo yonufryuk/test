@@ -1,0 +1,167 @@
+Первое ДЗ 
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я
+$ pwd
+/d/qa/lesson1_homework
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework
+
+2) Создать папку
+ $ mkdir a_1
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework
+
+3) Зайти в папку
+$ cd /d/qa/lesson1_homework/a_1
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+
+4) Создать 3 папки
+$ mkdir b_1 b_2 b_3
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+
+5) Зайти в любоую папку
+$ cd /d/qa/lesson1_homework/a_1/b_1
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+
+6) Создать 5 файлов (3 txt, 2 json)
+$ touch text1.txt text2.txt text3.txt test1.json test2.json
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+
+7) Создать 3 папки
+$ mkdir -p c_1/c_2/c_3
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+
+8. Вывести список содержимого папки
+$ ls
+c_1/  test1.json  test2.json  text1.txt  text2.txt  text3.txt
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+
+9) + Открыть любой txt файл
+vim text1.txt
+
+10) + написать туда что-нибудь, любой текст
+
+If you need to send a parcel or get the parcel,
+buy stamps and subscribe to a newspaper or a magazine,
+you need to go to the post-office. You can send not only
+a telegram, but also a money transfer
+
+11) + сохранить и выйти.
+после того, как закончили с вводом текста жмем esc и сохраняем вводя
+команду :w  закрытие редактора командой :q   (если без сохранения :q!)
+
+12) Выйти из папки на уровень выше
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ cd ..
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+$ mv b_1/text2.txt b_2/text2.txt
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+$ mv b_1/text3.txt b_2/text3.txt
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+$ cp b_2/text3.txt b_1/text3.txt
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+$ cp b_2/text2.txt b_1/text2.txt
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+
+или
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ cp text1.txt text2.txt /d/qa/lesson1_homework/a_1/b_3
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ ls /d/qa/lesson1_homework/a_1/b_3
+text1.txt  text2.txt
+
+
+15) Найти файл по имени
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+$ find /d/qa/ -name text1.txt
+/d/qa/lesson1_homework/a_1/b_1/text1.txt
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+$ find /d/qa/ -name text2.txt
+/d/qa/lesson1_homework/a_1/b_1/text2.txt
+/d/qa/lesson1_homework/a_1/b_2/text2.txt
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ nl text1.txt
+     1  If you need to send a parcel or get the parcel,
+     2  buy stamps and subscribe to a newspaper or a magazine,
+     3  you need to go to the post-office. You can send not only
+     4  a telegram, but also a money transfer
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+
+ДОПОЛНЕНИЕ:
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ cat -A text1.txt
+If you need to send a parcel or get the parcel,$
+buy stamps and subscribe to a newspaper or a magazine,$
+you need to go to the post-office. You can send not only$
+a telegram, but also a money transfer$
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$
+
+ДОПОЛНЕНИЕ2
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ tail -f text1.txt
+If you need to send a parcel or get the parcel,
+buy stamps and subscribe to a newspaper or a magazine,
+you need to go to the post-office. You can send not only
+a telegram, but also a money transfer
+
+для возврата к $ нажать Ctrl+C
+
+17) вывести несколько первых строк из текстового файла
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ head -3 text1.txt
+If you need to send a parcel or get the parcel,
+buy stamps and subscribe to a newspaper or a magazine,
+you need to go to the post-office. You can send not only
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+
+18) вывести несколько последних строк из текстового файла
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ tail -3 text1.txt
+buy stamps and subscribe to a newspaper or a magazine,
+you need to go to the post-office. You can send not only
+a telegram, but also a money transfer
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+$ less text1.txt
+можно прокручивать текст файла клавишами стрелок или перелистывать страницы 
+клавишами w и z.
+Чтобы выйти из режима просмотра используется клавиша q.
+после выхода окно терминала остается чистым и не содержит текст файла.
+
+20) вывести дату и время
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
+$ date
+Sat Oct 30 15:59:48 RTZ 2021
+
+User@DESKTOP-RMJ94L7 MINGW64 /d/qa/lesson1_homework/a_1/b_1
