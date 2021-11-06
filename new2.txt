@@ -1,0 +1,9 @@
+{    
+        "fullname":"Yury onufryuk"
+	"age":"43"
+	"pets":"no"
+	"future desired salary, probationary period":"350$"
+	"future desired salary, after probation":"550$
+	"future desired salary, by the end of the first year":"1000$"
+}
+
